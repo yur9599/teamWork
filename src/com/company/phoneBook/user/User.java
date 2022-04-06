@@ -16,11 +16,6 @@ public class User {
         this.email = email;
     }
 
-    public User(Map<ContactDataTypes, String> phoneNumber, Map<ContactDataTypes, String> email) {
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-    }
-
     public Map<ContactDataTypes, String> getPhoneNumber() {
         return phoneNumber;
     }

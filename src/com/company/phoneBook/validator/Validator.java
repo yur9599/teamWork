@@ -28,27 +28,20 @@ public class Validator {
         if (type==null || type.length()==0){
             return false;
         }
-        switch (type){
-            case("home"):
-            case("mobile"):
-            case("work"):
-            case("school"):
-                return true;
-        }
-        return false;
+        return switch (type) {
+            case ("home"), ("mobile"), ("work"), ("school") -> true;
+            default -> false;
+        };
     }
 
     public static boolean isValidEmailType(String type){
         if (type==null || type.length()==0){
             return false;
         }
-        switch (type){
-            case("home"):
-            case("work"):
-            case("school"):
-                return true;
-        }
-        return false;
+        return switch (type) {
+            case ("home"), ("work"), ("school") -> true;
+            default -> false;
+        };
     }
 
     public static boolean isValidUserName(String userName){
