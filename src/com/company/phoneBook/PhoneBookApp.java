@@ -2,7 +2,11 @@ package com.company.phoneBook;
 
 import com.company.phoneBook.contact.Contact;
 import com.company.phoneBook.controller.Controller;
+
+import java.io.*;
 import java.util.*;
+
+import static com.company.phoneBook.dB.DB.*;
 
 public class PhoneBookApp {
 
@@ -14,11 +18,15 @@ public class PhoneBookApp {
         String command;
         Scanner sc = new Scanner(System.in);
         Controller cnt = new Controller();
-
+        File file = new File("contactsData.txt");
+        if (file.length() != 0) {
+            uploadData(file);
+        }
         while (true) {
-            System.out.println("Enter command");
+            System.out.println("Enter command"+'\n'+"If you don`t know what to write enter (help)");
             command=sc.nextLine();
             if (command.equals("exit")){
+                updateData(file);
                 break;
             }
             switch (command) {

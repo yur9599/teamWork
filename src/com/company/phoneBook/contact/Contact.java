@@ -2,7 +2,9 @@ package com.company.phoneBook.contact;
 
 import com.company.phoneBook.user.User;
 
-public class Contact implements Comparable<Contact> {
+import java.io.Serializable;
+
+public class Contact implements Comparable<Contact>, Serializable {
 
     private String userName;
     private final User user;

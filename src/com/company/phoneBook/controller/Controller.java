@@ -185,18 +185,21 @@ public class Controller {
     }
 
     public void contSearch(){
-        String userNameForSearch;
+        String userNameOrPhoneNumberForSearch;
         while (true){
-            System.out.println("Enter name for search");
-            userNameForSearch=sc.nextLine();
-            if (isValidUserName(userNameForSearch)) {
+            System.out.println("Enter name/phoneNumber for search");
+            userNameOrPhoneNumberForSearch=sc.nextLine();
+            if (isValidUserName(userNameOrPhoneNumberForSearch)) {
+                break;
+            }
+            else if (isValidPhoneNumber(userNameOrPhoneNumberForSearch)){
                 break;
             }
             else {
                 System.out.println("Invalid input ");
             }
         }
-        service.search(userNameForSearch);
+        service.search(userNameOrPhoneNumberForSearch);
     }
 
     private void updateName(){

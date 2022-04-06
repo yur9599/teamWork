@@ -2,9 +2,10 @@ package com.company.phoneBook.user;
 
 import com.company.phoneBook.enums.ContactDataTypes;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public class User {
+public class User implements Serializable {
 
     private final Map<ContactDataTypes,String> phoneNumber;
     private String company;
