@@ -15,6 +15,7 @@ public class PhoneBookApp {
     public final static List<Contact> CONTACTS =new ArrayList<>();
 
     public static void start(){
+        int count=0;
         String command;
         Scanner sc = new Scanner(System.in);
         Controller cnt = new Controller();
@@ -23,7 +24,10 @@ public class PhoneBookApp {
             uploadData(file);
         }
         while (true) {
-            System.out.println("Enter command"+'\n'+"If you don`t know what to write enter (help)");
+            System.out.println("Enter command");
+            if ((count++)==0) {
+                System.out.println("If you don`t know what to write enter (help)");
+            }
             command=sc.nextLine();
             if (command.equals("exit")){
                 updateData(file);
